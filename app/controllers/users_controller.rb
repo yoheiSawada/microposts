@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.order(created_at: :desc)
+    #ユーザに紐付いたマイクロポストを作成日時新着順で取得し、@micropostsに代入
   end
   
   def new

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
                       uniqueness: { case_sensitive: false }
     
     has_secure_password
+    has_many :microposts
 end
 
 # 2行目で、データの保存前にメールアドレスのアルファベットを小文字にする。
