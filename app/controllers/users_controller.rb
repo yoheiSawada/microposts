@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "ツイッターもどきにようこそ！"
       redirect_to @user
     else
      render 'new'
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   
   def update
     if @user.update(user_params)
-      flash[:success] = "Updated Profile"
+      flash[:success] = "更新しました"
       redirect_to @user
     else
      render 'edit'
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation, :profile)
   end
   
   def set_params

@@ -1,16 +1,30 @@
+
 <h1>
     
     <%= gravatar_for @user %>
     <%= @user.name %>
-    
-    <p>your　mailadrres</p>
-    <br>
-      <%= @user.email %>
-    <br>
-
-   
-    <p>自己紹介</p>
-    
-    <br>
-    <p>地域</p>
 </h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title">メールアドレス</p>
+  </div>
+  <div class="panel-body">
+   <%= @user.email %>
+  </div>
+</div>
+<br>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title">プロフィール</p>
+  </div>
+  <div class="panel-body">
+   <%= @user.profile %>
+  </div>
+</div>
+<br>
+
+
+
+    (<%= link_to "編集する" , edit_user_path(@user) %>)
