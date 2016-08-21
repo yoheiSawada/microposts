@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update]
-  #右上の３つのメソッドに実行するときに、先に、set_paramsを実行する
+#右上の３つのメソッドに実行するときに、先に、set_paramsを実行する
   before_action :correct_user, only: [:edit, :update]
-  #エディット、アップデートの前に、correct_userを実行する
+#エディット、アップデートの前に、correct_userを実行する
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
