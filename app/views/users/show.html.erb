@@ -1,12 +1,6 @@
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+  <%= render 'user_profile' %>
+
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
@@ -17,25 +11,4 @@
     <% end %>
   </div>
 </div>
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p class="panel-title">メールアドレス</p>
-  </div>
-  <div class="panel-body">
-   <%= @user.email %>
-  </div>
-</div>
-<br>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p class="panel-title">プロフィール</p>
-  </div>
-  <div class="panel-body">
-   <%= @user.profile %>
-  </div>
-</div>
-<br>
 

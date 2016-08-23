@@ -1,0 +1,10 @@
+<div class="row">
+  <%= render 'user_profile' %>
+
+  <div class="col-md-8">
+    <h3><%= @title %> (<%= @users.count %>)</h3>
+    <ol class="users">
+      <%= render @users %>
+    </ol>
+  </div>
+</div>

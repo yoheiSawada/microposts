@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_params, only: [:show, :edit, :update]
+  before_action :set_params, only: [:show, :edit, :update, :followings, :followers]
 #右上の３つのメソッドに実行するときに、先に、set_paramsを実行する
   before_action :correct_user, only: [:edit, :update]
 #エディット、アップデートの前に、correct_userを実行する
@@ -33,6 +33,19 @@ class UsersController < ApplicationController
      render 'edit'
     end
   end
+  
+  def followings
+    @title = 'Followings一覧'
+    @users = @user.following_users
+    render 'show_follow'
+  end
+
+  def followers
+    @title = 'Followers一覧'
+    @users = @user.follower_users
+    render 'show_follow'
+  end
+  
   
   private
   

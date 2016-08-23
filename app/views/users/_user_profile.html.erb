@@ -1,0 +1,29 @@
+<aside class="col-md-4">
+  <section class="user_info">
+    <h1>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h1>
+  </section>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <p class="panel-title">メールアドレス</p>
+    </div>
+    <div class="panel-body">
+     <%= @user.email %>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <p class="panel-title">プロフィール</p>
+    </div>
+    <div class="panel-body">
+     <%= @user.profile %>
+    </div>
+  </div>
+  <p>
+    <%= link_to "Userpage", user_path(@user) %> | 
+    <%= link_to "Followings", followings_user_path(@user) %> | 
+    <%= link_to "Followers", followers_user_path(@user) %>
+  </p>
+</aside>
