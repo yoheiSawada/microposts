@@ -22,8 +22,9 @@ class User < ActiveRecord::Base
     has_secure_password
     
     #マウント　アップローダ？
+    #ヘロク用に変更中
     mount_uploader :image, ImageUploader 
-    
+    #mount_uploader :avatar,AvatarUploader
     
     has_many :microposts
 

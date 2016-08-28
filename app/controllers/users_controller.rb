@@ -53,6 +53,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation, :profile, 
                                  :image, :image_cache, :remove_image)
+                                 
+#avatarをimageに変更すればもどる -->
   end
   
   def set_params
