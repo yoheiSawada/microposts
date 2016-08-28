@@ -13,7 +13,18 @@ class User < ActiveRecord::Base
     validates :profile, allow_blank: true, 
                        length: { minimum: 2, maximum: 200 }, 
                        on: :update
+  
+    #イメージはなくてもよくしたい                   
+#    validates :image, allow_blank: true, 
+#                       on: :update
+  
+                       
     has_secure_password
+    
+    #マウント　アップローダ？
+    mount_uploader :image, ImageUploader 
+    
+    
     has_many :microposts
 
 

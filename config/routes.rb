@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   root to: 'static_pages#home'
   get    'signup', to: 'users#new'
   get    'login',  to: 'sessions#new'

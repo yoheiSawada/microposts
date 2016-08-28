@@ -20,9 +20,34 @@
       
       <%= f.label :profile %>
       <%= f.text_area :profile, :size=>"50x10" %>
+      
+      
+      
+      
+           <!-- 追加箇所 開始 -->
+  <div class="field">
+    <% if @user.image? %>
+      <div class="thumbnail">
+        <%= image_tag @user.image.url %>
+      </div>
+    <% end %><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @user.persisted? && @user.image? %>
+      <label>
+        <%= f.check_box :remove_image %>
+        画像を削除
+      </label>
+    <% end %>
+  </div>
+  <!-- 追加箇所 終了 -->
     
       
-      <%= f.submit "Edit my account", class:"btn btn-large btn-primary" %>
+      <%= f.submit "設定を変更する", class:"btn btn-large btn-primary" %>
     <% end %>
       
   </div>
