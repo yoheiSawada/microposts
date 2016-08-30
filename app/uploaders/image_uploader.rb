@@ -23,10 +23,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     model.id
   end
 
-  #ヘロクのために変更
-  #def store_dir
-  #  "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  #end
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
 
 
 
